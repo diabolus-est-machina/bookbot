@@ -1,12 +1,16 @@
-from stats import get_book_text, count_words, count_chars
+from stats import get_book_text, count_words, count_chars, sort_char_dict
 
 def main():
     filepath = "books/frankenstein.txt"
     file_content = get_book_text(filepath)
     word_count = count_words(file_content)
     char_count = count_chars(file_content)
-    print (f"{word_count} words found in the document")
-    print(char_count)
+    print (f"Found {word_count} total words")
+    print("--------- Character Count ------------")
+    sorted_char_dict = sort_char_dict(char_count)
+    for line in sorted_char_dict:
+        print (str(line[0]) + ": " + str(line[1]))
+
     
 
 
